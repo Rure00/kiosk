@@ -12,5 +12,8 @@
 
 fun main() {
     val kioskLv1 = KioskLv1()
-    kioskLv1.main()
+    val kioskLv2 = KioskLv2()
+
+    //kioskLv1.main()
+    //kioskLv2.main()
 }
