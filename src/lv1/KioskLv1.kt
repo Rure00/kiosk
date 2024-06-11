@@ -1,3 +1,5 @@
+package lv1
+
 import kotlin.system.exitProcess
 
 class KioskLv1 {

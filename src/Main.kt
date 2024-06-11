@@ -1,3 +1,7 @@
+import lv1.KioskLv1
+import lv2.KioskLv2
+import lv3.KioskLv3
+
 //TODO: Lv0: 요구사항 및 상세기능 정리
 //      요구사항)
 //      1.메뉴 카테고리: 번호에 매핑 후 번호 입력받기
@@ -13,7 +17,9 @@
 fun main() {
     val kioskLv1 = KioskLv1()
     val kioskLv2 = KioskLv2()
+    val kioskLv3 = KioskLv3()
 
     //kioskLv1.main()
     //kioskLv2.main()
+    kioskLv3.main()
 }

@@ -1,4 +1,5 @@
-import jdk.jfr.Description
+package lv2
+
 import kotlin.system.exitProcess
 
 class KioskLv2 {
@@ -97,28 +98,5 @@ class KioskLv2 {
     }
 }
 
-class Category(
-    val name: String,
-    val description: String
-) {
-    fun getInfo(): String
-        = "\"$name        | $description"
-}
 
-class Burger(
-    val name: String,
-    val description: String,
-    val price: Double
-) {
-    fun getInfo(): String
-        = "$name        | W $price  | $description"
-}
 
-class Drink(
-    val name: String,
-    val description: String,
-    val price: Double
-) {
-    fun getInfo(): String
-            = "$name        | W $price  | $description"
-}

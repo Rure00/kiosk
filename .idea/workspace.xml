@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bab3cd87-8046-4484-986c-064cf7096b3d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lv3/KioskLv3.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KioskLv1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lv1/KioskLv1.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KioskLv2.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/lv2/KioskLv2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/KioskLv3.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,7 +31,9 @@
   "associatedIndex": 0
 }]]></component>
   <component name="ProjectId" id="2hiKc1TrDZLzOGoZ3j7M21nXM8Q" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,6 +46,15 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/lv3" />
+      <recent name="$PROJECT_DIR$/src/lv2" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="lv1" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
