@@ -1,7 +1,16 @@
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import lv1.KioskLv1
 import lv2.KioskLv2
 import lv3.KioskLv3
 import lv4.KioskLv4
+import lv5.KioskLv5
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.LocalTime
+import java.util.Date
 
 //TODO: Lv0: 요구사항 및 상세기능 정리
 //      요구사항)
@@ -20,9 +29,11 @@ fun main() {
     val kioskLv2 = KioskLv2()
     val kioskLv3 = KioskLv3()
     val kioskLv4 = KioskLv4()
+    val kioskLv5 = KioskLv5()
 
     //kioskLv1.main()
     //kioskLv2.main()
     //kioskLv3.main()
-    kioskLv4.main()
+    //kioskLv4.main()
+    kioskLv5.main()
 }
