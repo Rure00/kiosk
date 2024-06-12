@@ -70,7 +70,7 @@ class KioskLv5 {
             printCategory()
 
             val size = categoryList.size
-            when(val selectedIndex = getCategoryIndex()) {
+            val menuList = when(val selectedIndex = getCategoryIndex()) {
                 size+1 -> {
                     onOrder()
                     continue
@@ -218,15 +218,12 @@ class KioskLv5 {
 
     private fun doPayment(price: Double) {
         val nowTime = LocalTime.now()
-        if(nowTime.hour >= bankInspectionTime[0].hour && nowTime.hour < bankInspectionTime[1].hour) {
-            val hour = if(nowTime.hour > 12) "오후 ${nowTime.hour-12}시"
-                        else if(nowTime.hour == 12) "오후 12시"
-                        else if(nowTime.hour == 0) "오전 12시"
-                        else "오전 ${nowTime.hour}시"
-            val minute = "${nowTime.minute}분"
+        val inspectStart = bankInspectionTime[0]
+        val inspectEnd = bankInspectionTime[1]
 
-            println("현재 시각은 $hour ${minute}입니다.")
-            println("은행 점검 시간은 ${bankInspectionTime[0]} ~ ${bankInspectionTime[1]}이므로 결제할 수 없습니다.")
+        if(nowTime.isBigThen(inspectStart) && inspectEnd.isBigThen(nowTime)) {
+            println("현재 시각은 ${timeToString(nowTime)}입니다.")
+            println("은행 점검 시간은 ${timeToString(inspectStart)} ~ ${timeToString(inspectEnd)}이므로 결제할 수 없습니다.")
 
             runBlocking { delay(1500) }
 
@@ -251,4 +248,23 @@ class KioskLv5 {
             delay(3000)
         }
     }
+
+
+    private fun timeToString(time: LocalTime): String {
+        val hour = time.hour
+
+        val hourStr = if(hour > 12) "오후 ${time.hour-12}시"
+                    else if(hour == 12) "오후 12시"
+                    else if(hour == 0) "오전 12시"
+                    else "오전 ${hour}시"
+
+        return "$hourStr ${time.minute}분 ${time.second}초"
+    }
+    private fun LocalTime.isBigThan(comparison: LocalTime): Boolean
+        = if(this.hour > comparison.hour) true
+            else if(this.minute > comparison.minute) true
+            else if(this.second >= comparison.second) true
+            else false
+
+
 }
