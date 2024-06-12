@@ -68,35 +68,15 @@ class KioskLv5 {
             println("자금: $budget W\n")
 
             printCategory()
-            val menuList = when(val categoryIndex = getCategoryIndex()) {
-                categoryList.size+1 -> {
-                    if(cart.isNotEmpty()) {
-                        printOrderPage()
-                        when(orderOrBack()) {
-                            1 ->{
-                                val price = cart.sumOf { it.price }
-                                if(budget >= price){
-                                    doPayment(price)
-                                }
-                                else {
-                                    runBlocking {
-                                        println("현재 잔액은 ${budget}W 으로 ${String.format("%.2f", price-budget)}W이 부족해서 주문할 수 없습니다.")
-                                        delay(3000)
-                                    }
-                                }
-                                continue
-                            }
-                            2 -> continue
-                            else -> throw Exception("절대 나오면 안되는 에러: orderOrBack() 예외 발생")
-                        }
-                    }
-                    else {
-                        println("장바구니가 비었습니다.")
-                        continue
-                    }
+
+            val size = categoryList.size
+            when(val selectedIndex = getCategoryIndex()) {
+                size+1 -> {
+                    onOrder()
+                    continue
                 }
-                categoryList.size+2 -> exitProcess(0)
-                in 1..categoryList.size -> categoryList[categoryIndex-1].getMenuList()
+                size+2-> exitProcess(0)
+                in 1..size -> categoryList[selectedIndex-1].getMenuList()
                 else -> throw Exception("절대 나오면 안되는 에러: categoryIndex 예외 발생")
             }
 
@@ -189,6 +169,29 @@ class KioskLv5 {
         }
     }
 
+    private fun onOrder() {
+        if(cart.isEmpty()) {
+            println("장바구니가 비었습니다.")
+            return
+        }
+
+        printOrderPage()
+        when(orderOrBack()) {
+            1 ->{
+                val price = cart.sumOf { it.price }
+                if(budget >= price){
+                    doPayment(price)
+                } else {
+                    runBlocking {
+                        println("현재 잔액은 ${budget}W 으로 ${String.format("%.2f", price-budget)}W이 부족해서 주문할 수 없습니다.")
+                        delay(3000)
+                    }
+                }
+            }
+            2 -> return
+            else -> throw Exception("절대 나오면 안되는 에러: orderOrBack() 예외 발생")
+        }
+    }
     private fun printOrderPage() {
         println("--------------------------------------------------------")
         println("아래와 같이 주문 하시겠습니까?")

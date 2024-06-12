@@ -11,6 +11,8 @@ import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.LocalTime
 import java.util.Date
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 //TODO: Lv0: 요구사항 및 상세기능 정리
 //      요구사항)
