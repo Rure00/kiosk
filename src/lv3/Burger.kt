@@ -1,6 +1,6 @@
 package lv3
 
-class Burger(
+open class Burger(
     override val name: String,
     override val description: String,
     override val price: Double

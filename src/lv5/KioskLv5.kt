@@ -221,7 +221,7 @@ class KioskLv5 {
         val inspectStart = bankInspectionTime[0]
         val inspectEnd = bankInspectionTime[1]
 
-        if(nowTime.isBigThen(inspectStart) && inspectEnd.isBigThen(nowTime)) {
+        if(nowTime.isBiggerThan(inspectStart) && inspectEnd.isBiggerThan(nowTime)) {
             println("현재 시각은 ${timeToString(nowTime)}입니다.")
             println("은행 점검 시간은 ${timeToString(inspectStart)} ~ ${timeToString(inspectEnd)}이므로 결제할 수 없습니다.")
 
@@ -260,11 +260,9 @@ class KioskLv5 {
 
         return "$hourStr ${time.minute}분 ${time.second}초"
     }
-    private fun LocalTime.isBigThan(comparison: LocalTime): Boolean
+    private fun LocalTime.isBiggerThan(comparison: LocalTime): Boolean
         = if(this.hour > comparison.hour) true
             else if(this.minute > comparison.minute) true
             else if(this.second >= comparison.second) true
             else false
-
-
 }

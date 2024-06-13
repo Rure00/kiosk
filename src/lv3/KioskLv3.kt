@@ -1,5 +1,9 @@
 package lv3
 
+import lv3.burgers.CheeseBurger
+import lv3.burgers.Hamburger
+import lv3.burgers.ShackBurger
+import lv3.burgers.ShroomBurger
 import kotlin.system.exitProcess
 
 class KioskLv3 {
@@ -14,11 +18,11 @@ class KioskLv3 {
     )
 
     init {
-        val shackBurger = Burger("ShackBurger", "토마토, 양상추, 쉑소스가 토핑된 치즈버거", 6.9)
-        val smokeShack = Burger("SmokeShack", "베이컨, 체리 페퍼에 쉑소스가 토핑된 치즈버거", 8.9)
-        val shroomBurger = Burger("ShroomBurger", "몬스터 치즈와 체다 치즈로 속을 채운 베지테리안 버거", 9.4)
-        val cheeseburger = Burger("Cheeseburger", "포테이토 번과 비프패티, 치즈가 토핑된 치즈버거", 6.9)
-        val hamburger = Burger("Hamburger", "비프패티를 기반으로 야채가 들어간 기본버거", 5.4)
+        val shackBurger = ShackBurger()
+        val smokeShack = ShroomBurger()
+        val shroomBurger = ShroomBurger()
+        val cheeseburger = CheeseBurger()
+        val hamburger = Hamburger()
 
         burgerCategory.addMenu(shackBurger)
         burgerCategory.addMenu(smokeShack)
