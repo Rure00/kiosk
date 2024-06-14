@@ -26,6 +26,8 @@ import kotlin.math.sqrt
 //          > 주문 후 종료
 
 
+
+
 fun main() {
     val kioskLv1 = KioskLv1()
     val kioskLv2 = KioskLv2()
@@ -37,5 +39,9 @@ fun main() {
     //kioskLv2.main()
     //kioskLv3.main()
     //kioskLv4.main()
-    kioskLv5.main()
+    //kioskLv5.main()
+}
+
+fun code82() {
+    val arr = IntArray(10000)
 }

@@ -4,6 +4,10 @@ import lv3.burgers.CheeseBurger
 import lv3.burgers.Hamburger
 import lv3.burgers.ShackBurger
 import lv3.burgers.ShroomBurger
+import lv3.drinks.Cider
+import lv3.drinks.Coke
+import lv3.drinks.OrangeJuice
+import lv3.drinks.Pepsi
 import kotlin.system.exitProcess
 
 class KioskLv3 {
@@ -30,10 +34,10 @@ class KioskLv3 {
         burgerCategory.addMenu(cheeseburger)
         burgerCategory.addMenu(hamburger)
 
-        val cock = Drink("Coke", "코카콜라", 2.0)
-        val pepsi = Drink("Pepsi", "펩시", 2.0)
-        val cider = Drink("Cider", "칠성 사이다", 2.0)
-        val orangeJuice = Drink("OrangeJuice", "오렌지 쥬스", 2.5)
+        val cock = Coke()
+        val pepsi = Pepsi()
+        val cider = Cider()
+        val orangeJuice = OrangeJuice()
 
         drinkCategory.addMenu(cock)
         drinkCategory.addMenu(pepsi)
@@ -104,5 +108,4 @@ class KioskLv3 {
 
         return result
     }
-
 }
